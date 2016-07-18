@@ -1,0 +1,15 @@
+﻿@model CarRent.Models.ManageCarViewModel
+@{ ViewBag.Title = "Edit Car";}
+
+<h2>@ViewBag.Title</h2>
+
+<div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+<form asp-controller="CarManage" asp-action="Edit" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form" novalidate>
+    @await Html.PartialAsync("_CarInfoPartial")
+</form>
+@section scripts
+{
+    <script>
+        utils.bindCarBrandsAndModels();
+    </script>
+}

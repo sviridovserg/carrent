@@ -1,0 +1,25 @@
+﻿@using CarRent.DataAccess.Models
+@model IEnumerable<DataError>
+@{ ViewBag.Title = "Error";}
+<h2>@ViewBag.Title</h2>
+<div class="alert alert-danger">
+    @switch (Model.Count())
+    {
+        case 0:
+            @: An error occurred while processing your request. Please try again
+            break;
+        case 1:
+            @Model.First().Description;
+            break;
+        default:
+            @: The following errors were encountered:
+            <ul>
+                @foreach (var error in Model)
+                {
+                    <li>@error.Description</li>
+                }
+            </ul>
+            break;
+    }
+</div>
+@Html.ActionLink("OK", "Index", null, new { @class = "btn btn-default" })

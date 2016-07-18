@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "Cars Rental Company"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=CarRent2;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
